@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XI RPL 1 | SMKN 1 Pangandaran</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#090018;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+    min-height:75px;
+    background:#10072b;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 20px rgba(0,0,0,.25);
+}
+
+.logo{
+    font-size:21px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.logo span{
+    color:#9b5cff;
+}
+
+.menu{
+    display:flex;
+    gap:22px;
+    align-items:center;
+}
+
+.menu a{
+    color:#eadcff;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#9b5cff;
+}
+
+/* HERO */
+.hero{
+    min-height:700px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(rgba(20,3,50,.78),rgba(8,0,25,.9)),
+    url("a.jpeg");
+    background-size:cover;
+    background-position:center;
+    filter:blur(1px);
+    transform:scale(1.03);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+    padding:40px 20px;
+}
+
+.official{
+    display:inline-block;
+    background:rgba(160,60,255,.18);
+    border:1px solid rgba(160,60,255,.6);
+    color:#c77dff;
+    padding:10px 22px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:3px;
+    margin-bottom:25px;
+}
+
+.school{
+    font-size:18px;
+    font-weight:bold;
+    letter-spacing:3px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:78px;
+    font-weight:900;
+    line-height:1;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#9b5cff;
+}
+
+.quote{
+    max-width:650px;
+    margin:auto;
+    color:#d6c7e8;
+    line-height:1.7;
+}
+
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.hero-btn{
+    text-decoration:none;
+    padding:14px 25px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.btn-blue{
+    background:#8e44d6;
+    color:white;
+}
+
+.btn-outline{
+    border:1px solid #76569d;
+    color:white;
+}
+
+/* GENERAL SECTION */
+section{
+    padding:90px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title small{
+    color:#9b5cff;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:3px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-top:12px;
+}
+
+.section-title p{
+    color:#bba8d4;
+    margin-top:12px;
+}
+
+/* ABOUT */
+.about{
+    background:#10052b;
+}
+
+.about-text{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+    color:#c6b5dc;
+    line-height:1.9;
+    font-size:15px;
+}
+
+.stats{
+    max-width:900px;
+    margin:45px auto 0;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.stat{
+    background:#160c36;
+    border:1px solid #43227a;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+}
+
+.stat h3{
+    color:#9b5cff;
+    font-size:35px;
+    margin-bottom:8px;
+}
+
+/* WALI */
+.wali-section{
+    background:#090018;
+}
+
+.wali{
+    max-width:900px;
+    margin:auto;
+    background:#160c36;
+    border:1px solid #4c267d;
+    border-radius:25px;
+    padding:40px;
+    display:flex;
+    align-items:center;
+    gap:45px;
+}
+
+.wali img{
+    width:230px;
+    height:280px;
+    object-fit:cover;
+    border-radius:20px;
+    border:3px solid #a970ff;
+    cursor:pointer;
+    flex-shrink:0;
+}
+
+.wali-info{
+    flex:1;
+}
+
+.wali-info h4{
+    color:#9b5cff;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+.wali-info h2{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.wali-info p{
+    color:#c6b5dc;
+    line-height:1.8;
+}
+
+.wali-ig{
+    display:inline-block;
+    margin-top:18px;
+    color:#c77dff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* PROJECT */
+.project-section{
+    background:#10052b;
+}
+
+.project-container{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.project-card{
+    background:#160c36;
+    border:1px solid #43227a;
+    padding:35px;
+    border-radius:22px;
+}
+
+.project-number{
+    color:#9b5cff;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.project-card h3{
+    margin-bottom:12px;
+}
+
+.project-card p{
+    color:#c6b5dc;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* STRUKTUR */
+.structure-section{
+    background:#090018;
+}
+
+.structure-box{
+    max-width:1100px;
+    margin:0 auto 60px;
+}
+
+.structure-box-title{
+    text-align:center;
+    color:#9b5cff;
+    font-size:23px;
+    margin-bottom:25px;
+}
+
+.structure-container{
+    display:flex;
+    justify-content:center;
+    align-items:stretch;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.structure-card{
+    width:210px;
+    background:#160c36;
+    border:1px solid #43227a;
+    border-radius:20px;
+    padding:15px;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.structure-card:hover{
+    transform:translateY(-8px);
+    border-color:#9b5cff;
+    box-shadow:0 15px 35px rgba(34,119,255,.2);
+}
+
+.structure-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-bottom:12px;
+    display:block;
+}
+
+.structure-card h3{
+    font-size:17px;
+    margin-bottom:7px;
+}
+
+.structure-card p{
+    color:#c77dff;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.bidang-box{
+    margin-bottom:45px;
+}
+
+.bidang-title{
+    text-align:center;
+    font-size:20px;
+    color:#eadcff;
+    margin-bottom:20px;
+}
+
+.bidang-container{
+    display:flex;
+    justify-content:center;
+    align-items:stretch;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/* MEMBER */
+.member-section{
+    padding:90px 5%;
+    background:#10052b;
+    overflow:hidden;
+}
+
+.member-section .section-title h2{
+    color:white;
+}
+
+.member-section .section-title p{
+    color:#c77dff;
+}
+
+.member-container{
+    width:100%;
+    max-width:1200px;
+    height:570px;
+    margin:auto;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.members{
+    position:relative;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    perspective:1200px;
+}
+
+.member-card{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:230px;
+    background:#160c36;
+    border:1px solid #43227a;
+    border-radius:22px;
+    overflow:hidden;
+    cursor:pointer;
+
+    transform:translate(-50%,-50%) scale(.3);
+    opacity:0;
+    filter:blur(3px);
+
+    transition:
+        transform .7s cubic-bezier(.2,.8,.2,1),
+        opacity .7s ease,
+        filter .7s ease;
+}
+
+.member-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    display:block;
+}
+
+.member-info{
+    padding:15px;
+}
+
+.member-info h3{
+    color:white;
+    font-size:17px;
+    margin-bottom:7px;
+}
+
+.member-ig{
+    display:block;
+    color:#c77dff;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.member-no-ig{
+    color:#9f8bb7;
+    font-size:13px;
+}
+
+/* MEMBER POSITIONS */
+.member-card.active{
+    transform:translate(-50%,-50%) translateX(0) scale(1);
+    opacity:1;
+    z-index:10;
+    filter:blur(0);
+    border-color:#9b5cff;
+    box-shadow:0 25px 70px rgba(0,0,0,.5);
+}
+
+.member-card.left1{
+    transform:translate(-50%,-50%) translateX(-270px) scale(.78);
+    opacity:.65;
+    z-index:5;
+    filter:blur(.5px);
+}
+
+.member-card.right1{
+    transform:translate(-50%,-50%) translateX(270px) scale(.78);
+    opacity:.65;
+    z-index:5;
+    filter:blur(.5px);
+}
+
+.member-card.left2{
+    transform:translate(-50%,-50%) translateX(-480px) scale(.58);
+    opacity:.25;
+    z-index:2;
+    filter:blur(2px);
+}
+
+.member-card.right2{
+    transform:translate(-50%,-50%) translateX(480px) scale(.58);
+    opacity:.25;
+    z-index:2;
+    filter:blur(2px);
+}
+
+.member-card.hidden-card{
+    transform:translate(-50%,-50%) scale(.2);
+    opacity:0;
+    z-index:0;
+    filter:blur(4px);
+    pointer-events:none;
+}
+
+/* MEMBER CONTROL */
+.member-control{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-top:20px;
+}
+
+.member-control button{
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:#8e44d6;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.member-control button:hover{
+    background:#9b5cff;
+    transform:scale(1.08);
+}
+
+.member-control span{
+    color:#bba8d4;
+    font-size:14px;
+    min-width:60px;
+    text-align:center;
+}
+
+/* GALLERY */
+.gallery-section{
+    background:#090018;
+}
+
+.gallery{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.gallery img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    border-radius:18px;
+    border:1px solid #43227a;
+    display:block;
+}
+
+/* SOCIAL */
+.social-section{
+    background:
+    radial-gradient(
+        circle at 20% 20%,
+        rgba(180,70,255,.18),
+        transparent 35%
+    ),
+    #10052b;
+}
+
+.social-container{
+    max-width:950px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.social-card{
+    background:#160c36;
+    border:1px solid #43227a;
+    border-radius:25px;
+    overflow:hidden;
+}
+
+.social-photo{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    display:block;
+}
+
+.social-info{
+    padding:25px;
+}
+
+.social-label{
+    color:#9b5cff;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.social-info h3{
+    font-size:25px;
+    margin:8px 0;
+}
+
+.social-info p{
+    color:#c6b5dc;
+    line-height:1.7;
+    margin-bottom:18px;
+}
+
+.social-link{
+    color:#c77dff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* POPUP */
+.popup{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(4,0,12,.88);
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    padding:20px;
+}
+
+.popup-content{
+    background:#160c36;
+    border:1px solid #a970ff;
+    padding:20px;
+    border-radius:25px;
+    text-align:center;
+    max-width:400px;
+    width:100%;
+    position:relative;
+}
+
+.popup-content img{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    border-radius:18px;
+}
+
+.popup-content h2{
+    margin-top:15px;
+}
+
+.popup-content p{
+    color:#bba8d4;
+    margin-top:5px;
+}
+
+.popup-username{
+    display:inline-block;
+    margin-top:12px;
+    color:#c77dff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.close{
+    position:absolute;
+    right:20px;
+    top:20px;
+    width:38px;
+    height:38px;
+    background:white;
+    color:#172033;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* KONTAK */
+#kontak{
+    background:#090018;
+}
+
+.contact{
+    max-width:1100px;
+    margin:auto;
+    background:linear-gradient(135deg,#3b126b,#16052f);
+    border-radius:30px;
+    padding:65px 30px;
+    text-align:center;
+    border:1px solid #5b35a5;
+}
+
+.contact h2{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.contact p{
+    color:#d0bee4;
+    margin-bottom:12px;
+}
+
+.contact a{
+    display:inline-block;
+    margin-top:10px;
+    background:#8e44d6;
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+    background:#04000d;
+    text-align:center;
+    padding:30px;
+    color:#9f8bb7;
+    font-size:13px;
+}
+
+/* TABLET */
+@media(max-width:1000px){
+
+    .menu{
+        gap:12px;
+    }
+
+    .menu a{
+        font-size:11px;
+    }
+
+    .hero h1{
+        font-size:60px;
+    }
+
+    .member-card.left1{
+        transform:translate(-50%,-50%) translateX(-235px) scale(.72);
+    }
+
+    .member-card.right1{
+        transform:translate(-50%,-50%) translateX(235px) scale(.72);
+    }
+
+    .member-card.left2{
+        transform:translate(-50%,-50%) translateX(-400px) scale(.52);
+    }
+
+    .member-card.right2{
+        transform:translate(-50%,-50%) translateX(400px) scale(.52);
+    }
+}
+
+/* HP */
+@media(max-width:700px){
+
+    nav{
+        padding:0 5%;
+    }
+
+    .menu{
+        display:none;
+    }
+
+    section{
+        padding:70px 5%;
+    }
+
+    .hero{
+        min-height:650px;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .school{
+        font-size:14px;
+        letter-spacing:2px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .project-container{
+        grid-template-columns:1fr;
+    }
+
+    .wali{
+        flex-direction:column;
+        text-align:center;
+        padding:25px;
+        gap:25px;
+    }
+
+    .wali img{
+        width:200px;
+        height:250px;
+    }
+
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .gallery img{
+        height:180px;
+    }
+
+    .social-container{
+        grid-template-columns:1fr;
+    }
+
+    .structure-card{
+        width:190px;
+    }
+
+    .structure-card img{
+        height:210px;
+    }
+
+    /* CAROUSEL HP */
+    .member-container{
+        height:500px;
+    }
+
+    .member-card{
+        width:190px;
+    }
+
+    .member-card img{
+        height:230px;
+    }
+
+    .member-card.left1{
+        transform:translate(-50%,-50%) translateX(-165px) scale(.62);
+        opacity:.5;
+    }
+
+    .member-card.right1{
+        transform:translate(-50%,-50%) translateX(165px) scale(.62);
+        opacity:.5;
+    }
+
+    .member-card.left2{
+        transform:translate(-50%,-50%) translateX(-285px) scale(.45);
+        opacity:.18;
+    }
+
+    .member-card.right2{
+        transform:translate(-50%,-50%) translateX(285px) scale(.45);
+        opacity:.18;
+    }
+}
+
+/* HP KECIL */
+@media(max-width:480px){
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .official{
+        font-size:10px;
+        padding:9px 16px;
+        letter-spacing:2px;
+    }
+
+    .section-title h2{
+        font-size:30px;
+    }
+
+    .section-title p{
+        font-size:13px;
+        line-height:1.6;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .gallery img{
+        height:220px;
+    }
+
+    .structure-container{
+        gap:15px;
+    }
+
+    .structure-card{
+        width:165px;
+    }
+
+    .structure-card img{
+        height:190px;
+    }
+
+    .member-container{
+        height:480px;
+    }
+
+    .member-card{
+        width:175px;
+    }
+
+    .member-card img{
+        height:210px;
+    }
+
+    .member-card.left1{
+        transform:translate(-50%,-50%) translateX(-130px) scale(.55);
+        opacity:.35;
+    }
+
+    .member-card.right1{
+        transform:translate(-50%,-50%) translateX(130px) scale(.55);
+        opacity:.35;
+    }
+
+    .member-card.left2{
+        display:none;
+    }
+
+    .member-card.right2{
+        display:none;
+    }
+
+    .contact{
+        padding:50px 20px;
+    }
+
+    .contact h2{
+        font-size:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">XI <span>RPL 1</span></div>
+
+    <div class="menu">
+        <a href="#beranda">HOME</a>
+        <a href="#tentang">TENTANG</a>
+        <a href="#project">PROJECT</a>
+        <a href="#struktur">STRUKTUR</a>
+        <a href="#anggota">ANGGOTA</a>
+        <a href="#galeri">MEDIA</a>
+        <a href="#kontak">KONTAK</a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="beranda">
+
+    <div class="hero-content">
+
+        <div class="official">
+            OFFICIAL WEBSITE
+        </div>
+
+        <div class="school">
+            SMKN 1 PANGANDARAN
+        </div>
+
+        <h1>
+            WELCOME <span>XI RPL 1</span>
+        </h1>
+
+        <p class="quote">
+            "Jadikan setiap hari sebuah petualangan.
+            Belajar, berkarya, dan tumbuh bersama."
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#tentang" class="hero-btn btn-blue">
+                KENALI KELAS
+            </a>
+
+            <a href="#anggota" class="hero-btn btn-outline">
+                LIHAT ANGGOTA
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TENTANG -->
+<section class="about" id="tentang">
+
+    <div class="section-title">
+        <small>ABOUT OUR CLASS</small>
+        <h2>TENTANG XI RPL 1</h2>
+        <p>
+            Rumah bagi calon generasi ahli teknologi masa depan.
+        </p>
+    </div>
+
+    <p class="about-text">
+        XI RPL 1 adalah tempat kami belajar, berbagi, berkembang,
+        dan berproses bersama. Sebagai siswa Rekayasa Perangkat Lunak,
+        kami mempelajari berbagai hal tentang teknologi, pemrograman,
+        desain website, database, dan pengembangan aplikasi.
+    </p>
+
+    <div class="stats">
+
+        <div class="stat">
+            <h3>38</h3>
+            <p>SISWA</p>
+        </div>
+
+        <div class="stat">
+            <h3>1</h3>
+            <p>ROMBEL</p>
+        </div>
+
+        <div class="stat">
+            <h3>RPL</h3>
+            <p>JURUSAN</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WALI KELAS -->
+<section class="wali-section" id="wali">
+
+    <div class="section-title">
+        <small>OUR HOMEROOM TEACHER</small>
+        <h2>WALI KELAS</h2>
+        <p>
+            Guru yang membimbing dan mendampingi XI RPL 1.
+        </p>
+    </div>
+
+    <div class="wali">
+
+        <img
+            src="idris.jpeg"
+            alt="Bp Idris Mulyana"
+            onclick="bukaPopup(
+                'idris.jpeg',
+                'Bp Idris Mulyana',
+                'Wali Kelas XI RPL 1',
+                'https://www.instagram.com/idrismulyana9087/'
+            )"
+        >
+
+        <div class="wali-info">
+
+            <h4>WALI KELAS XI RPL 1</h4>
+
+            <h2>Bp Idris Mulyana</h2>
+
+            <p>
+                Beliau merupakan wali kelas XI RPL 1 yang membimbing
+                dan mendampingi kami selama proses pembelajaran
+                di SMKN 1 Pangandaran.
+            </p>
+
+            <a
+                class="wali-ig"
+                href="https://www.instagram.com/idrismulyana9087/"
+                target="_blank"
+            >
+                @idrismulyana9087
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECT -->
+<section class="project-section" id="project">
+
+    <div class="section-title">
+        <small>WHAT WE LEARN</small>
+        <h2>PROJECT & SKILL</h2>
+        <p>
+            Beberapa hal yang kami pelajari di jurusan RPL.
+        </p>
+    </div>
+
+    <div class="project-container">
+
+        <div class="project-card">
+            <div class="project-number">01</div>
+            <h3>HTML & CSS</h3>
+            <p>
+                Membuat dan mendesain website menggunakan HTML dan CSS.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <div class="project-number">02</div>
+            <h3>PROGRAMMING</h3>
+            <p>
+                Mempelajari logika pemrograman dan membuat berbagai aplikasi.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <div class="project-number">03</div>
+            <h3>DATABASE</h3>
+            <p>
+                Membuat dan mengelola database untuk mendukung sebuah aplikasi.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STRUKTUR -->
+<section class="structure-section" id="struktur">
+
+    <div class="section-title">
+        <small>OUR CLASS ORGANIZATION</small>
+        <h2>STRUKTUR KELAS</h2>
+        <p>
+            Klik foto untuk melihat informasi.
+        </p>
+    </div>
+
+
+    <!-- KETUA -->
+    <div class="structure-box">
+
+        <h3 class="structure-box-title">
+            KETUA KELAS
+        </h3>
+
+        <div class="structure-container">
+
+            <div
+                class="structure-card"
+                onclick="bukaPopup(
+                    'surya.jpeg',
+                    'Surya',
+                    'Ketua Kelas',
+                    'https://www.instagram.com/surya_kenz/'
+                )"
+            >
+                <img src="surya.jpeg" alt="Surya">
+                <h3>Surya</h3>
+                <p>Ketua Kelas</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- WAKIL -->
+    <div class="structure-box">
+
+        <h3 class="structure-box-title">
+            WAKIL KETUA KELAS
+        </h3>
+
+        <div class="structure-container">
+
+            <div
+                class="structure-card"
+                onclick="bukaPopup(
+                    'zidan.jpeg',
+                    'Zidan',
+                    'Wakil Ketua Kelas',
+                    'https://www.instagram.com/danzxie/'
+                )"
+            >
+                <img src="zidan.jpeg" alt="Zidan">
+                <h3>Zidan</h3>
+                <p>Wakil Ketua Kelas</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SEKRETARIS -->
+    <div class="structure-box">
+
+        <h3 class="structure-box-title">
+            SEKRETARIS
+        </h3>
+
+        <div class="structure-container">
+
+            <div
+                class="structure-card"
+                onclick="bukaPopup(
+                    'gelsey.jpeg',
+                    'Gelsey',
+                    'Sekretaris 1',
+                    'https://www.instagram.com/aureltheseries/'
+                )"
+            >
+                <img src="gelsey.jpeg" alt="Gelsey">
+                <h3>Gelsey</h3>
+                <p>Sekretaris 1</p>
+            </div>
+
+            <div
+                class="structure-card"
+                onclick="bukaPopup(
+                    'khaira.jpeg',
+                    'Khaira',
+                    'Sekretaris 2',
+                    'https://www.instagram.com/khairadlaprmsty/'
+                )"
+            >
+                <img src="khaira.jpeg" alt="Khaira">
+                <h3>Khaira</h3>
+                <p>Sekretaris 2</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BENDAHARA -->
+    <div class="structure-box">
+
+        <h3 class="structure-box-title">
+            BENDAHARA
+        </h3>
+
+        <div class="structure-container">
+
+            <div
+                class="structure-card"
+                onclick="bukaPopup(
+                    'alzahra.jpeg',
+                    'Al Zahra',
+                    'Bendahara 1',
+                    'https://www.instagram.com/vlzaoktavia/'
+                )"
+            >
+                <img src="alzahra.jpeg" alt="Al Zahra">
+                <h3>Al Zahra</h3>
+                <p>Bendahara 1</p>
+            </div>
+
+            <div
+                class="structure-card"
+                onclick="bukaPopup(
+                    'nevi.jpeg',
+                    'Nevi',
+                    'Bendahara 2',
+                    ''
+                )"
+            >
+                <img src="nevi.jpeg" alt="Nevi">
+                <h3>Nevi</h3>
+                <p>Bendahara 2</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SEKSI BIDANG -->
+    <div class="structure-box">
+
+        <h3 class="structure-box-title">
+            SEKSI BIDANG
+        </h3>
+
+
+        <!-- OLAHRAGA -->
+        <div class="bidang-box">
+
+            <h3 class="bidang-title">
+                OLAHRAGA
+            </h3>
+
+            <div class="bidang-container">
+
+                <div
+                    class="structure-card"
+                    onclick="bukaPopup(
+                        'jose.jpeg',
+                        'Jose',
+                        'Seksi Bidang Olahraga',
+                        'https://www.instagram.com/_josekaruniadzulfikar/'
+                    )"
+                >
+                    <img src="jose.jpeg" alt="Jose">
+                    <h3>Jose</h3>
+                    <p>Olahraga</p>
+                </div>
+
+                <div
+                    class="structure-card"
+                    onclick="bukaPopup(
+                        'anisa.jpeg',
+                        'Anisa',
+                        'Seksi Bidang Olahraga',
+                        'https://www.instagram.com/sasaustirammm/'
+                    )"
+                >
+                    <img src="anisa.jpeg" alt="Anisa">
+                    <h3>Anisa</h3>
+                    <p>Olahraga</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- KEBERSIHAN -->
+        <div class="bidang-box">
+
+            <h3 class="bidang-title">
+                KEBERSIHAN
+            </h3>
+
+            <div class="bidang-container">
+
+                <div
+                    class="structure-card"
+                    onclick="bukaPopup(
+                        'reiza.jpeg',
+                        'Reiza',
+                        'Seksi Bidang Kebersihan',
+                        'https://www.instagram.com/reizaaa28/'
+                    )"
+                >
+                    <img src="reiza.jpeg" alt="Reiza">
+                    <h3>Reiza</h3>
+                    <p>Kebersihan</p>
+                </div>
+
+                <div
+                    class="structure-card"
+                    onclick="bukaPopup(
+                        'sofiah.jpeg',
+                        'Sofiah',
+                        'Seksi Bidang Kebersihan',
+                        'https://www.instagram.com/sofia.nbila/'
+                    )"
+                >
+                    <img src="sofiah.jpeg" alt="Sofiah">
+                    <h3>Sofiah</h3>
+                    <p>Kebersihan</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- KESEHATAN -->
+        <div class="bidang-box">
+
+            <h3 class="bidang-title">
+                KESEHATAN
+            </h3>
+
+            <div class="bidang-container">
+
+                <div
+                    class="structure-card"
+                    onclick="bukaPopup(
+                        'maryam.jpeg',
+                        'Maryam',
+                        'Seksi Bidang Kesehatan',
+                        'https://www.instagram.com/avsdhue_/'
+                    )"
+                >
+                    <img src="maryam.jpeg" alt="Maryam">
+                    <h3>Maryam</h3>
+                    <p>Kesehatan</p>
+                </div>
+
+                <div
+                    class="structure-card"
+                    onclick="bukaPopup(
+                        'ryan.jpeg',
+                        'Ryan',
+                        'Seksi Bidang Kesehatan',
+                        'https://www.instagram.com/fpeyan/'
+                    )"
+                >
+                    <img src="ryan.jpeg" alt="Ryan">
+                    <h3>Ryan</h3>
+                    <p>Kesehatan</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- KEAMANAN -->
+        <div class="bidang-box">
+
+            <h3 class="bidang-title">
+                KEAMANAN
+            </h3>
+
+            <div class="bidang-container">
+
+                <div
+                    class="structure-card"
+                    onclick="bukaPopup(
+                        'satrio.jpeg',
+                        'Satrio',
+                        'Seksi Bidang Keamanan',
+                        'https://www.instagram.com/satt.duabelas/'
+                    )"
+                >
+                    <img src="satrio.jpeg" alt="Satrio">
+                    <h3>Satrio</h3>
+                    <p>Keamanan</p>
+                </div>
+
+                <div
+                    class="structure-card"
+                    onclick="bukaPopup(
+                        'syakib.jpeg',
+                        'Syakib',
+                        'Seksi Bidang Keamanan',
+                        'https://www.instagram.com/bikays_/'
+                    )"
+                >
+                    <img src="syakib.jpeg" alt="Syakib">
+                    <h3>Syakib</h3>
+                    <p>Keamanan</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ANGGOTA -->
+<section class="member-section" id="anggota">
+
+    <div class="section-title">
+        <small>MEET OUR CLASS</small>
+        <h2>ANGGOTA XI RPL 1</h2>
+        <p>
+            Geser ke kiri atau kanan untuk melihat semua anggota.
+        </p>
+    </div>
+
+    <div
+        class="member-container"
+        id="memberContainer"
+    >
+        <div
+            class="members"
+            id="members"
+        ></div>
+    </div>
+
+    <div class="member-control">
+
+        <button onclick="prevMember()">
+            ←
+        </button>
+
+        <span id="memberNumber">
+            1 / 38
+        </span>
+
+        <button onclick="nextMember()">
+            →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- GALERI -->
+<section class="gallery-section" id="galeri">
+
+    <div class="section-title">
+        <small>OUR MEMORIES</small>
+        <h2>MEDIA & GALERI</h2>
+        <p>
+            Kumpulan momen dan kenangan XI RPL 1.
+        </p>
+    </div>
+
+    <div class="gallery">
+
+        <img src="a.jpeg" alt="Galeri 1">
+        <img src="b.jpeg" alt="Galeri 2">
+        <img src="c.jpeg" alt="Galeri 3">
+        <img src="d.jpeg" alt="Galeri 4">
+        <img src="e.jpeg" alt="Galeri 5">
+        <img src="f.jpeg" alt="Galeri 6">
+        <img src="g.jpeg" alt="Galeri 7">
+        <img src="h.jpeg" alt="Galeri 8">
+        <img src="i.jpeg" alt="Galeri 9">
+        <img src="j.jpeg" alt="Galeri 10">
+        <img src="k.jpeg" alt="Galeri 11">
+        <img src="l.jpeg" alt="Galeri 12">
+        <img src="m.jpeg" alt="Galeri 13">
+        <img src="n.jpeg" alt="Galeri 14">
+        <img src="o.jpeg" alt="Galeri 15">
+
+        <img src="p.jpeg" alt="Galeri 16">
+        <img src="q.jpeg" alt="Galeri 17">
+        <img src="r.jpeg" alt="Galeri 18">
+        <img src="s.jpeg" alt="Galeri 19">
+        <img src="t.jpeg" alt="Galeri 20">
+        <img src="u.jpeg" alt="Galeri 21">
+        <img src="v.jpeg" alt="Galeri 22">
+        <img src="w.jpeg" alt="Galeri 23">
+        <img src="x.jpeg" alt="Galeri 24">
+
+    </div>
+
+</section>
+
+
+<!-- SOSMED -->
+<section class="social-section" id="sosmed">
+
+    <div class="section-title">
+        <small>FOLLOW OUR JOURNEY</small>
+        <h2>MEDIA SOSIAL</h2>
+        <p>
+            Ikuti perjalanan XI RPL 1.
+        </p>
+    </div>
+
+    <div class="social-container">
+
+        <div class="social-card">
+
+            <img
+                src="instagram.jpeg"
+                class="social-photo"
+                alt="Instagram XI RPL 1"
+            >
+
+            <div class="social-info">
+
+                <div class="social-label">
+                    INSTAGRAM
+                </div>
+
+                <h3>@source.xiseone</h3>
+
+                <p>
+                    Dokumentasi foto, kegiatan,
+                    dan kenangan XI RPL 1.
+                </p>
+
+                <a
+                    href="https://www.instagram.com/source.xiseone/"
+                    target="_blank"
+                    class="social-link"
+                >
+                    KUNJUNGI INSTAGRAM →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="social-card">
+
+            <img
+                src="tiktok.jpeg"
+                class="social-photo"
+                alt="TikTok XI RPL 1"
+            >
+
+            <div class="social-info">
+
+                <div class="social-label">
+                    TIKTOK
+                </div>
+
+                <h3>@softw4re.one</h3>
+
+                <p>
+                    Video kegiatan, momen random,
+                    dan keseruan XI RPL 1.
+                </p>
+
+                <a
+                    href="https://www.tiktok.com/@softw4re.one"
+                    target="_blank"
+                    class="social-link"
+                >
+                    KUNJUNGI TIKTOK →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- KONTAK -->
+<section id="kontak">
+
+    <div class="contact">
+
+        <h2>XI RPL 1</h2>
+
+        <p>
+            SMKN 1 PANGANDARAN
+        </p>
+
+        <p>
+            Satu kelas, banyak cerita, satu tujuan.
+        </p>
+
+        <a href="mailto:xirpl1@email.com">
+            HUBUNGI KAMI
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- POPUP -->
+<div
+    id="popup"
+    class="popup"
+    onclick="tutupPopup()"
+>
+
+    <div
+        class="popup-content"
+        onclick="event.stopPropagation()"
+    >
+
+        <span
+            class="close"
+            onclick="tutupPopup()"
+        >
+            ×
+        </span>
+
+        <img id="popup-img">
+
+        <h2 id="popup-nama"></h2>
+
+        <p id="popup-jabatan"></p>
+
+        <a
+            id="popup-ig"
+            class="popup-username"
+            target="_blank"
+        ></a>
+
+    </div>
+
+</div>
+
+
+<footer>
+    <p>
+        © 2026 XI RPL 1 | SMKN 1 PANGANDARAN
+    </p>
+</footer>
+
+
+<script>
+
+/* DATA ANGGOTA */
+const anggota = [
+
+    {nama:"Adi",foto:"adi.jpeg",ig:"https://www.instagram.com/kaiznoxxs/"},
+    {nama:"Agnia",foto:"agnia.jpeg",ig:"https://www.instagram.com/agnia.m.zahra/"},
+    {nama:"Al Zahra",foto:"alzahra.jpeg",ig:"https://www.instagram.com/vlzaoktavia/"},
+    {nama:"Anisa",foto:"anisa.jpeg",ig:"https://www.instagram.com/sasaustirammm/"},
+    {nama:"Annisa",foto:"annisa.jpeg",ig:"https://www.instagram.com/ni_sa_080/"},
+    {nama:"Calvin",foto:"calvin.jpeg",ig:"https://www.instagram.com/clvnprtm4/"},
+    {nama:"Cantika",foto:"cantika.jpeg",ig:"https://www.instagram.com/urlovecantikaaa1/"},
+    {nama:"Depa",foto:"depa.jpeg",ig:"https://www.instagram.com/mpaw_ha/"},
+    {nama:"Dinda",foto:"dinda.jpeg",ig:"https://www.instagram.com/dyndaai/"},
+    {nama:"Ega",foto:"ega.jpeg",ig:""},
+    {nama:"Febria",foto:"febria.jpeg",ig:"https://www.instagram.com/0nly.fby/"},
+    {nama:"Gelsey",foto:"gelsey.jpeg",ig:"https://www.instagram.com/aureltheseries/"},
+    {nama:"Irna",foto:"irna.jpeg",ig:"https://www.instagram.com/nnananaa00/"},
+    {nama:"Jenia",foto:"jenia.jpeg",ig:"https://www.instagram.com/shad0wof_jenn/"},
+    {nama:"Jose",foto:"jose.jpeg",ig:"https://www.instagram.com/_josekaruniadzulfikar/"},
+    {nama:"Karunia",foto:"karunia.jpeg",ig:"https://www.instagram.com/matchachream_/"},
+    {nama:"Khaira",foto:"khaira.jpeg",ig:"https://www.instagram.com/khairadlaprmsty/"},
+    {nama:"Maryam",foto:"maryam.jpeg",ig:"https://www.instagram.com/avsdhue_/"},
+    {nama:"Maysha",foto:"maysha.jpeg",ig:"https://www.instagram.com/yeahhmyyyy/"},
+    {nama:"Nada",foto:"nada.jpeg",ig:"https://www.instagram.com/jp_.ndd/"},
+    {nama:"Nevi",foto:"nevi.jpeg",ig:"https://www.instagram.com/arnell._/"},
+    {nama:"Putri Kamelia",foto:"putri.jpeg",ig:"https://www.instagram.com/mell_mell13.2/"},
+    {nama:"Rasya",foto:"rasya.jpeg",ig:"https://www.instagram.com/rayyy43456/"},
+    {nama:"Reiza",foto:"reiza.jpeg",ig:"https://www.instagram.com/reizaaa28/"},
+    {nama:"Reni",foto:"reni.jpeg",ig:"https://www.instagram.com/tikaannn123/"},
+    {nama:"Rini",foto:"rini.jpeg",ig:"https://www.instagram.com/rinianjarwati03/"},
+    {nama:"Rifa",foto:"rifa.jpeg",ig:"https://www.instagram.com/issayevl/"},
+    {nama:"Ryan",foto:"ryan.jpeg",ig:"https://www.instagram.com/fpeyan/"},
+    {nama:"Sarah",foto:"sarah.jpeg",ig:"https://www.instagram.com/sarahrhmwtii/"},
+    {nama:"Satrio",foto:"satrio.jpeg",ig:"https://www.instagram.com/satt.duabelas/"},
+    {nama:"Silvi",foto:"silvi.jpeg",ig:"https://www.instagram.com/svvi_kmlsriii/"},
+    {nama:"Siti",foto:"siti.jpeg",ig:"https://www.instagram.com/whuy_luvvs/"},
+    {nama:"Sofiah",foto:"sofiah.jpeg",ig:"https://www.instagram.com/sofia.nbila/"},
+    {nama:"Surya",foto:"surya.jpeg",ig:"https://www.instagram.com/surya_kenz/"},
+    {nama:"Syakib",foto:"syakib.jpeg",ig:"https://www.instagram.com/bikays_/"},
+    {nama:"Tanisha",foto:"tanisha.jpeg",ig:"https://www.instagram.com/tanishaabigailnalani/"},
+    {nama:"Yulaika",foto:"yulaika.jpeg",ig:"https://www.instagram.com/1kkqqns_/"},
+    {nama:"Zidan",foto:"zidan.jpeg",ig:"https://www.instagram.com/danzxie/"}
+
+];
+
+
+/* AMBIL USERNAME */
+function ambilUsername(link){
+
+    if(!link){
+        return "";
+    }
+
+    let bagian = link.split("/").filter(Boolean);
+
+    return "@" + bagian[bagian.length - 1];
+}
+
+
+/* MEMBUAT CARD ANGGOTA */
+const members = document.getElementById("members");
+
+anggota.forEach(function(orang,index){
+
+    let username = ambilUsername(orang.ig);
+
+    members.innerHTML += `
+
+        <div
+            class="member-card"
+            data-index="${index}"
+        >
+
+            <img
+                src="${orang.foto}"
+                alt="${orang.nama}"
+                onclick="bukaPopup(
+                    '${orang.foto}',
+                    '${orang.nama}',
+                    'Siswa XI RPL 1',
+                    '${orang.ig}'
+                )"
+            >
+
+            <div class="member-info">
+
+                <h3>
+                    ${orang.nama}
+                </h3>
+
+                ${
+                    orang.ig
+                    ?
+                    `<a
+                        class="member-ig"
+                        href="${orang.ig}"
+                        target="_blank"
+                        onclick="event.stopPropagation()"
+                    >
+                        ${username}
+                    </a>`
+                    :
+                    `<span class="member-no-ig">
+                        Instagram belum tersedia
+                    </span>`
+                }
+
+            </div>
+
+        </div>
+
+    `;
+
+});
+
+
+/* CAROUSEL */
+const cards = document.querySelectorAll(".member-card");
+
+let posisi = 0;
+
+
+function tampilkanMember(){
+
+    cards.forEach(function(card,index){
+
+        card.className = "member-card";
+
+        let jarak = index - posisi;
+
+        if(jarak > anggota.length / 2){
+            jarak -= anggota.length;
+        }
+
+        if(jarak < -anggota.length / 2){
+            jarak += anggota.length;
+        }
+
+
+        if(jarak === 0){
+
+            card.classList.add("active");
+
+        }else if(jarak === -1){
+
+            card.classList.add("left1");
+
+        }else if(jarak === -2){
+
+            card.classList.add("left2");
+
+        }else if(jarak === 1){
+
+            card.classList.add("right1");
+
+        }else if(jarak === 2){
+
+            card.classList.add("right2");
+
+        }else{
+
+            card.classList.add("hidden-card");
+
+        }
+
+    });
+
+
+    document.getElementById("memberNumber").textContent =
+        `${posisi + 1} / ${anggota.length}`;
+}
+
+
+/* NEXT */
+function nextMember(){
+
+    posisi++;
+
+    if(posisi >= anggota.length){
+        posisi = 0;
+    }
+
+    tampilkanMember();
+}
+
+
+/* PREVIOUS */
+function prevMember(){
+
+    posisi--;
+
+    if(posisi < 0){
+        posisi = anggota.length - 1;
+    }
+
+    tampilkanMember();
+}
+
+
+/* MOUSE WHEEL */
+let scrollLock = false;
+
+document
+.getElementById("memberContainer")
+.addEventListener("wheel",function(e){
+
+    e.preventDefault();
+
+    if(scrollLock){
+        return;
+    }
+
+    scrollLock = true;
+
+    if(e.deltaY > 0){
+        nextMember();
+    }else{
+        prevMember();
+    }
+
+    setTimeout(function(){
+
+        scrollLock = false;
+
+    },700);
+
+},{passive:false});
+
+
+/* TOUCH / SWIPE */
+let startX = 0;
+
+document
+.getElementById("memberContainer")
+.addEventListener("touchstart",function(e){
+
+    startX = e.touches[0].clientX;
+
+});
+
+
+document
+.getElementById("memberContainer")
+.addEventListener("touchend",function(e){
+
+    let endX = e.changedTouches[0].clientX;
+
+    let jarak = endX - startX;
+
+    if(Math.abs(jarak) > 50){
+
+        if(jarak < 0){
+            nextMember();
+        }else{
+            prevMember();
+        }
+
+    }
+
+});
+
+
+/* KEYBOARD */
+document.addEventListener("keydown",function(e){
+
+    if(e.key === "ArrowRight"){
+        nextMember();
+    }
+
+    if(e.key === "ArrowLeft"){
+        prevMember();
+    }
+
+});
+
+
+/* POPUP */
+function bukaPopup(foto,nama,jabatan,ig){
+
+    document.getElementById("popup").style.display = "flex";
+
+    document.getElementById("popup-img").src = foto;
+
+    document.getElementById("popup-nama").innerText = nama;
+
+    document.getElementById("popup-jabatan").innerText = jabatan;
+
+    const popupIg =
+        document.getElementById("popup-ig");
+
+
+    if(ig){
+
+        popupIg.innerText = ambilUsername(ig);
+
+        popupIg.href = ig;
+
+        popupIg.style.display = "inline-block";
+
+    }else{
+
+        popupIg.innerText = "";
+
+        popupIg.removeAttribute("href");
+
+        popupIg.style.display = "none";
+
+    }
+
+}
+
+
+/* TUTUP POPUP */
+function tutupPopup(){
+
+    document.getElementById("popup").style.display = "none";
+
+}
+
+
+/* JALANKAN CAROUSEL */
+tampilkanMember();
+
+</script>
+
+</body>
+</html>

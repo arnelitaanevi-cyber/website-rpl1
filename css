@@ -1,0 +1,337 @@
+/* =========================
+   MEMBER CAROUSEL
+========================= */
+
+.member-section {
+    padding: 90px 8%;
+    background: #091d40;
+    overflow: hidden;
+}
+
+.member-section .section-title h2 {
+    color: white;
+}
+
+.member-section .section-title p {
+    color: #70b3ff;
+}
+
+
+/* AREA CAROUSEL */
+
+.member-container {
+    width: 100%;
+    height: 560px;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* CONTAINER FOTO */
+
+.members {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    perspective: 1200px;
+}
+
+
+/* CARD */
+
+.member-card {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 230px;
+
+    background: #0c224a;
+    border: 1px solid #1e4179;
+
+    border-radius: 22px;
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.35);
+
+    opacity: 0;
+
+    filter: blur(3px);
+
+    transition:
+        transform .7s cubic-bezier(.2,.8,.2,1),
+        opacity .7s ease,
+        filter .7s ease;
+}
+
+
+/* FOTO CARD */
+
+.member-card img {
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+    display: block;
+}
+
+
+/* INFO CARD */
+
+.member-info {
+    padding: 15px;
+}
+
+.member-info h3 {
+    color: white;
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.member-ig {
+    display: block;
+
+    color: #70b3ff;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.member-no-ig {
+    color: #8ea2c5;
+    font-size: 13px;
+}
+
+
+/* =========================
+   CARD TENGAH
+========================= */
+
+.member-card.active {
+    transform:
+        translate(-50%, -50%)
+        translateX(0)
+        scale(1);
+
+    opacity: 1;
+    z-index: 10;
+
+    filter: blur(0);
+
+    border-color: #4d9cff;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.5);
+}
+
+
+/* =========================
+   CARD KIRI
+========================= */
+
+.member-card.left1 {
+    transform:
+        translate(-50%, -50%)
+        translateX(-280px)
+        scale(.80);
+
+    opacity: .7;
+    z-index: 5;
+
+    filter: blur(.5px);
+}
+
+
+/* KIRI PALING LUAR */
+
+.member-card.left2 {
+    transform:
+        translate(-50%, -50%)
+        translateX(-480px)
+        scale(.60);
+
+    opacity: .3;
+    z-index: 2;
+
+    filter: blur(2px);
+}
+
+
+/* =========================
+   CARD KANAN
+========================= */
+
+.member-card.right1 {
+    transform:
+        translate(-50%, -50%)
+        translateX(280px)
+        scale(.80);
+
+    opacity: .7;
+    z-index: 5;
+
+    filter: blur(.5px);
+}
+
+
+/* KANAN PALING LUAR */
+
+.member-card.right2 {
+    transform:
+        translate(-50%, -50%)
+        translateX(480px)
+        scale(.60);
+
+    opacity: .3;
+    z-index: 2;
+
+    filter: blur(2px);
+}
+
+
+/* =========================
+   CARD LAIN
+========================= */
+
+.member-card.hidden-card {
+    transform:
+        translate(-50%, -50%)
+        translateX(0)
+        scale(.25);
+
+    opacity: 0;
+
+    z-index: 0;
+
+    filter: blur(4px);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   TOMBOL
+========================= */
+
+.member-control {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 15px;
+}
+
+.member-control button {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #368cff;
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.member-control button:hover {
+    background: #4d9cff;
+    transform: scale(1.08);
+}
+
+.member-control span {
+    color: #9eafca;
+
+    font-size: 14px;
+
+    min-width: 60px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   HP
+========================= */
+
+@media (max-width: 700px) {
+
+    .member-container {
+        height: 500px;
+    }
+
+    .member-card {
+        width: 190px;
+    }
+
+    .member-card img {
+        height: 230px;
+    }
+
+
+    /* KIRI */
+
+    .member-card.left1 {
+        transform:
+            translate(-50%, -50%)
+            translateX(-180px)
+            scale(.70);
+
+        opacity: .65;
+    }
+
+
+    .member-card.left2 {
+        transform:
+            translate(-50%, -50%)
+            translateX(-300px)
+            scale(.48);
+
+        opacity: .25;
+    }
+
+
+    /* KANAN */
+
+    .member-card.right1 {
+        transform:
+            translate(-50%, -50%)
+            translateX(180px)
+            scale(.70);
+
+        opacity: .65;
+    }
+
+
+    .member-card.right2 {
+        transform:
+            translate(-50%, -50%)
+            translateX(300px)
+            scale(.48);
+
+        opacity: .25;
+    }
+
+}
